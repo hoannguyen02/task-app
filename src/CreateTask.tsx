@@ -53,8 +53,16 @@ export const CreateTask = () => {
             <Controller
               name="title"
               control={control}
-              render={({ field }) => (
-                <TextField label="Title" autoComplete="off" {...field} />
+              rules={{
+                required: true,
+              }}
+              render={({ field, fieldState: { invalid } }) => (
+                <TextField
+                  label="Title"
+                  autoComplete="off"
+                  {...field}
+                  error={invalid}
+                />
               )}
             />
           </div>
@@ -62,8 +70,16 @@ export const CreateTask = () => {
             <Controller
               name="description"
               control={control}
-              render={({ field }) => (
-                <TextField label="Description" autoComplete="off" {...field} />
+              rules={{
+                required: true,
+              }}
+              render={({ field, fieldState: { invalid } }) => (
+                <TextField
+                  label="Description"
+                  autoComplete="off"
+                  {...field}
+                  error={invalid}
+                />
               )}
             />
           </div>
